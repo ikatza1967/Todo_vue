@@ -1,22 +1,10 @@
 {
   "tareas": [
     {
-      "id": 1,
-      "fecha": "24/04/2023",
-      "titulo": "hacer la compra",
-      "contenido": "hola que ase"
-    },
-    {
-      "fecha": "27/04/2023",
-      "titulo": "charla techpenguin",
-      "contenido": "ir a la charla sobre docker de estos tipos",
-      "id": 2
-    },
-    {
-      "titulo": "hoy",
-      "fecha": "2023-04-21",
-      "contenido": "mañana",
-      "id": 3
+      "titulo": "hola",
+      "fecha": "2023-04-26",
+      "contenido": "hola\n",
+      "id": 1
     }
   ]
 }
