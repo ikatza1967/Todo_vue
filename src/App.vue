@@ -91,7 +91,8 @@ function showEdit() {
   <h1 class="text-center w-100 border mb-5 mt-4">TO DO LIST</h1>
 
   <div class="d-flex container">
-    <div class="create_task border col p-5">
+    <div  
+    class="create_task border col p-5" >
       <h1>CREAR TAREAS</h1>
       <form>
         <input
@@ -112,7 +113,7 @@ function showEdit() {
       </form>
     </div>
 
-    <div class="viewtask border col p-5">
+    <div class="viewtask border col p-5" >
       <h1>Tareas</h1>
 
       <div
@@ -134,7 +135,7 @@ function showEdit() {
        
 
         <h6 class="border rounded-1 col-12">{{ datos.contenido }}</h6>
-        
+        <img  class="container" src="src/assets/istockphoto-1330040188-170667a.jpg" alt="">
       </div>
       <div v-show="mostrar" >
         <h4>Para editar </h4>
@@ -150,5 +151,21 @@ function showEdit() {
 <style scoped>
 .date {
   width: 1.6rem;
+}
+.create_task{
+  background-color: aquamarine;
+}
+.viewtask{
+  background-color: rgb(180, 173, 173);
+}
+h1{
+  background-color: burlywood;
+}
+img{
+width: 90px;
+
+}.container{
+  display:flex ;
+  justify-content:flex-end ;
 }
 </style>
