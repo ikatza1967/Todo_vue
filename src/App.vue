@@ -8,10 +8,9 @@ const contenido = ref("");
 
 const datosJson = ref("");
 
-const editfecha = ref("")
-const edittitulo = ref("")
-const editcontenido= ref("")
-
+const editfecha = ref("");
+const edittitulo = ref("");
+const editcontenido = ref("");
 
 //mostrar tareas
 
@@ -26,7 +25,6 @@ let reqOptions = {
   headers: headersList,
 };
 
-
 //mostras tareas
 
 const getDatos = async () => {
@@ -40,59 +38,50 @@ getDatos();
 
 const CreatePost = () => {
   axios.post("http://localhost:3000/tareas", {
-      titulo: titulo.value,
-      fecha: fecha.value,
-      contenido: contenido.value,
-    });
+    titulo: titulo.value,
+    fecha: fecha.value,
+    contenido: contenido.value,
+  });
 };
 
 // crear delete
 
-
-function deleteTask(id){
-  const url = `http://localhost:3000/tareas/${id}`
-  const datosDelete =  axios.delete(url)
- location.reload()
+function deleteTask(id) {
+  const url = `http://localhost:3000/tareas/${id}`;
+  const datosDelete = axios.delete(url);
+  location.reload();
 }
 
-// editar comentario 
+// editar comentario
 
+const idTask = ref("");
+let mostrar = ref(false);
 
-const idTask = ref("")
-let mostrar = ref(false)
-
-function editTask(id){
- idTask.value = id
- mostrar.value = true
- console.log("id", idTask.value)
+function editTask(id) {
+  idTask.value = id;
+  mostrar.value = true;
+  console.log("id", idTask.value);
 }
-
 
 function showEdit() {
   try {
     axios.put(`http://localhost:3000/tareas/${idTask.value}`, {
       titulo: edittitulo.value,
       fecha: editfecha.value,
-      contenido: editcontenido.value
-    })
-    location.reload()
-
+      contenido: editcontenido.value,
+    });
+    location.reload();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-
 }
-
-
-
 </script>
 
 <template>
   <h1 class="text-center w-100 border mb-5 mt-4">TO DO LIST</h1>
 
   <div class="d-flex container">
-    <div  
-    class="create_task border col p-5" >
+    <div class="create_task border col p-5">
       <h1>CREAR TAREAS</h1>
       <form>
         <input
@@ -109,11 +98,13 @@ function showEdit() {
           rows="10"
           v-model="contenido"
         ></textarea>
-        <button type="submit" class="w-100" @click="CreatePost()">guardar</button>
+        <button type="submit" class="w-100" @click="CreatePost()">
+          guardar
+        </button>
       </form>
     </div>
 
-    <div class="viewtask border col p-5" >
+    <div class="viewtask border col p-5">
       <h1>Tareas</h1>
 
       <div
@@ -121,30 +112,32 @@ function showEdit() {
         v-for="datos in datosJson"
         :key="datosJson.id"
       >
-        <h6  class="col-9">{{ datos.fecha }}</h6>
-        
-        
+        <h6 class="col-9">{{ datos.fecha }}</h6>
 
-        
-        <button @click="deleteTask(datos.id)"> <i class="fa-solid fa-trash-can" ></i></button>
+        <button @click="deleteTask(datos.id)">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
 
-       <button @click="editTask(datos.id)" ><i class="fa-solid fa-pen-to-square"></i> </button> 
-       <h5  class="border rounded-1 col-12">{{ datos.titulo }} </h5>
-       
-
-       
+        <button @click="editTask(datos.id)">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+        <h5 class="border rounded-1 col-12">{{ datos.titulo }}</h5>
 
         <h6 class="border rounded-1 col-12">{{ datos.contenido }}</h6>
-        <img  class="container" src="src/assets/istockphoto-1330040188-170667a.jpg" alt="">
-      </div>
-      <div v-show="mostrar" >
-        <h4>Para editar </h4>
-        <input type="date" v-model="editfecha" >
-        <input type="text" v-model="edittitulo" >
-        <input type="text" v-model="editcontenido" >
-        <button  @click="showEdit()"><i class="fa-solid fa-check"></i></button>
+        <img
+          class="container"
+          src="src/assets/istockphoto-1330040188-170667a.jpg"
+          alt=""
+        />
       </div>
       
+      <div v-show="mostrar">
+        <h4>Para editar</h4>
+        <input type="date" v-model="editfecha" />
+        <input type="text" v-model="edittitulo" />
+        <input type="text" v-model="editcontenido" />
+        <button @click="showEdit()"><i class="fa-solid fa-check"></i></button>
+      </div>
     </div>
   </div>
 </template>
@@ -152,20 +145,20 @@ function showEdit() {
 .date {
   width: 1.6rem;
 }
-.create_task{
+.create_task {
   background-color: aquamarine;
 }
-.viewtask{
+.viewtask {
   background-color: rgb(180, 173, 173);
 }
-h1{
+h1 {
   background-color: burlywood;
 }
-img{
-width: 90px;
-
-}.container{
-  display:flex ;
-  justify-content:flex-end ;
+img {
+  width: 90px;
+}
+.container {
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
