@@ -125,9 +125,9 @@ function showEdit() {
 
         <h6 class="border rounded-1 col-12">{{ datos.contenido }}</h6>
         <img
-          class="container"
+          class="container col-12" 
           src="src/assets/istockphoto-1330040188-170667a.jpg"
-          alt=""
+          alt="" 
         />
       </div>
       
