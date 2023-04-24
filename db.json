@@ -1,15 +1,15 @@
 {
   "tareas": [
     {
-      "titulo": "",
-      "fecha": "2023-04-23",
-      "contenido": "no puedo poner la imagen a la drch",
+      "titulo": "Nuevos grupos",
+      "fecha": "2023-04-26",
+      "contenido": "organizarproyectos python",
       "id": 2
     },
     {
-      "titulo": "hola",
-      "fecha": "2023-04-23",
-      "contenido": "prueba",
+      "titulo": "Cita lambide",
+      "fecha": "2023-04-30",
+      "contenido": "Actualizar curriculum",
       "id": 3
     }
   ]

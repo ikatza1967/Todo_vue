@@ -104,7 +104,7 @@ function showEdit() {
       </form>
     </div>
 
-    <div class="viewtask border col p-5">
+    <div class="viewtask border col p-5 ">
       <h1>Tareas</h1>
 
       <div
@@ -125,7 +125,7 @@ function showEdit() {
 
         <h6 class="border rounded-1 col-12">{{ datos.contenido }}</h6>
         <img
-          class="container"
+          class="img"
           src="src/assets/istockphoto-1330040188-170667a.jpg"
           alt=""
         />
@@ -157,8 +157,7 @@ h1 {
 img {
   width: 90px;
 }
-.container {
-  display: flex;
-  justify-content: flex-end;
+.img {
+  margin-left: 23rem;
 }
 </style>
