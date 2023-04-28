@@ -20,7 +20,7 @@ let headersList = {
 };
 
 let reqOptions = {
-  url: "http://localhost:3000/tareas",
+  url: "https://jesus-78vd.onrender.com/tareas",
   method: "GET",
   headers: headersList,
 };
@@ -37,7 +37,7 @@ getDatos();
 // crear post
 
 const CreatePost = () => {
-  axios.post("http://localhost:3000/tareas", {
+  axios.post("https://jesus-78vd.onrender.com/tareas", {
     titulo: titulo.value,
     fecha: fecha.value,
     contenido: contenido.value,
@@ -47,7 +47,7 @@ const CreatePost = () => {
 // crear delete
 
 function deleteTask(id) {
-  const url = `http://localhost:3000/tareas/${id}`;
+  const url = `https://jesus-78vd.onrender.com/tareas/${id}`;
   const datosDelete = axios.delete(url);
   location.reload();
 }
@@ -65,7 +65,7 @@ function editTask(id) {
 
 function showEdit() {
   try {
-    axios.put(`http://localhost:3000/tareas/${idTask.value}`, {
+    axios.put(`https://jesus-78vd.onrender.com/tareas/${idTask.value}`, {
       titulo: edittitulo.value,
       fecha: editfecha.value,
       contenido: editcontenido.value,
@@ -104,7 +104,7 @@ function showEdit() {
       </form>
     </div>
 
-    <div class="viewtask border col p-5">
+    <div class="viewtask border col p-5 ">
       <h1>Tareas</h1>
 
       <div
@@ -125,7 +125,7 @@ function showEdit() {
 
         <h6 class="border rounded-1 col-12">{{ datos.contenido }}</h6>
         <img
-          class="container col-12" 
+          class="img"
           src="src/assets/istockphoto-1330040188-170667a.jpg"
           alt="" 
         />
@@ -155,10 +155,10 @@ h1 {
   background-color: burlywood;
 }
 img {
-  width: 90px;
+  width: 50px;
 }
-.container {
-  display: flex;
-  justify-content: flex-end;
+.img {
+  margin-left: 23rem;
 }
+
 </style>
