@@ -78,12 +78,14 @@ function showEdit() {
 </script>
 
 <template>
-  <h1 class="text-center w-100 border mb-5 mt-4">TO DO LIST</h1>
+  <div class="fondo">
 
-  <div class="d-flex container">
+  <h1 class="text-center w-100 border mb-5">TO DO LIST</h1>
+
+  <div class="d-flex container ">
     <div class="create_task border col p-5">
       <h1>CREAR TAREAS</h1>
-      <form>
+      <form class="">
         <input
           class="w-75 mb-3"
           placeholder="Nombre de la tarea"
@@ -108,7 +110,7 @@ function showEdit() {
       <h1>Tareas</h1>
 
       <div
-        class="d-flex border rounded-1 p-1 gap-1 p-2 flex-wrap"
+        class="cuadroDerecha d-flex border rounded-1 p-1 gap-1 p-2 flex-wrap"
         v-for="datos in datosJson"
         :key="datosJson.id"
       >
@@ -140,6 +142,7 @@ function showEdit() {
       </div>
     </div>
   </div>
+</div>
 </template>
 <style scoped>
 .date {
@@ -149,16 +152,25 @@ function showEdit() {
   background-color: aquamarine;
 }
 .viewtask {
-  background-color: rgb(180, 173, 173);
+  background-color: rgb(165, 230, 175);
 }
 h1 {
-  background-color: burlywood;
+  background-color: rgb(135, 150, 222);
 }
 img {
   width: 50px;
 }
 .img {
-  margin-left: 23rem;
+  margin-left: 12rem;
+}
+.fondo {
+  background-image: url(src/assets/piedras.jpeg);
+  padding-bottom: 5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cuadroDerecha {
+  background-color: rgb(0, 174, 255);
 }
 
 </style>
