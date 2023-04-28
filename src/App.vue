@@ -36,8 +36,8 @@ getDatos();
 
 // crear post
 
-const CreatePost = () => {
-  axios.post("https://jesus-78vd.onrender.com/tareas", {
+const CreatePost = () async=> {
+ await axios.post("https://jesus-78vd.onrender.com/tareas", {
     titulo: titulo.value,
     fecha: fecha.value,
     contenido: contenido.value,
